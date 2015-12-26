@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+     <p><span class="label label-info">{{products|count}} Items</span></p>
+     <ul class="list-group">
+        {% for product in products %}   
+    	<li class="list-group-item"> <a href ='/catalog/{{product.prdcat_id}}/products/{{product.id}}' > {{product.prdname}} </a> </li>
+    	{% endfor %}
+    <br><a href ='/catalog/{{category_id}}/products/add' >Add New Products </a>
+    
+{% endblock %}
